@@ -21,7 +21,7 @@ def run_git(args):
     return subprocess.run(["git"] + args, cwd=REPO_PATH, text=True, capture_output=True, check=False)
 
 def get_git_diff():
-    result = run_git(["diff", "--cached", "--", "*.py", "*.md", "*.txt"])
+    result = run_git(["diff", "--cached" , "--", "*.py", "*.md", "*.txt" , "java_only/*"])
     return result.stdout.strip()
 
 def generate_short_commit_message(diff_text):
